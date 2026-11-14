@@ -32,7 +32,7 @@
     { c: 'Byi1tsClPnO', l: [.5, .4], r: ['Nº 4', 'Coruja · peito'], s: 'A cores' }
   ];
   var CICLO = 4800, LUZ = 1300;
-  var jan = d.getElementById('qJanela'), qLuz = d.getElementById('qLuz'), selo = d.getElementById('qSelo'), peca = d.getElementById('peca');
+  var jan = d.getElementById('qJanela'), selo = d.getElementById('qSelo'), peca = d.getElementById('peca');
   var reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
   PH.forEach(function (p) { var im = new Image(); im.src = 'assets/img/p/' + p.c + '.webp'; });
   function rotulo(p) {
@@ -49,14 +49,13 @@
     var velhas = [].slice.call(jan.children).slice(0, -1);
     setTimeout(function () { velhas.forEach(function (v) { v.remove(); }); }, 320);
     luz.style.setProperty('--lx', p.l[0] * 100 + '%'); luz.style.setProperty('--ly', p.l[1] * 100 + '%');
-    if (reduz) { luz.style.setProperty('--lr', '200%'); qLuz.textContent = '100%'; rotulo(p); return; }
+    if (reduz) { luz.style.setProperty('--lr', '200%'); rotulo(p); return; }
     var t0 = performance.now();
     (function f(t) {
       var k = Math.min(1, (t - t0) / LUZ), e = 1 - Math.pow(1 - k, 3);
       luz.style.setProperty('--lr', (8 + e * 190).toFixed(1) + '%');
       luz.style.setProperty('--lx', (p.l[0] + (.5 - p.l[0]) * e) * 100 + '%');
       luz.style.setProperty('--ly', (p.l[1] + (.5 - p.l[1]) * e) * 100 + '%');
-      qLuz.textContent = Math.round(e * 100) + '%';
       if (k < 1) requestAnimationFrame(f);
     })(t0);
     rotulo(p);
@@ -71,7 +70,7 @@
 
   /* ---------- topo e gaveta ---------- */
   var topo = d.getElementById('topo'), gav = d.getElementById('gaveta'), burger = d.getElementById('burger');
-  function rolar() { topo.classList.toggle('solido', scrollY > 30); }
+  function rolar() { topo.classList.toggle('solido', scrollY > 30); var m = d.documentElement.scrollHeight - innerHeight; topo.style.setProperty('--rol', m > 0 ? (scrollY / m).toFixed(3) : 0); }
   addEventListener('scroll', rolar, { passive: true }); rolar();
   function gaveta(a) { gav.hidden = !a; burger.setAttribute('aria-expanded', a); d.body.style.overflow = a ? 'hidden' : ''; }
   burger.addEventListener('click', function () { gaveta(gav.hidden); });

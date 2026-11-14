@@ -295,3 +295,15 @@ h1,h2,h3{margin:0;font-weight:400}
 .grande{line-height:1;padding:0 .04em .08em;clip-path:inset(-20% 100% -40% -10%)}
 .pronto .grande{clip-path:inset(-20% -10% -40% -10%)}
 @media (hover:none){.hero{min-height:var(--hh,100svh)}}
+/* v6: detalhes mínimos */
+::selection{background:var(--azul);color:#fff}
+.q-c{position:absolute;width:20px;height:20px;border:0 solid var(--tinta);z-index:2}
+.q-c1{top:-11px;left:-11px;border-width:2px 0 0 2px}.q-c2{top:-11px;right:-11px;border-width:2px 2px 0 0}
+.q-c3{bottom:-11px;left:-11px;border-width:0 0 2px 2px}.q-c4{bottom:-11px;right:-11px;border-width:0 2px 2px 0}
+.topo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--azul);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.topo.solido{box-shadow:none}.topo.solido::after{transform:scaleX(var(--rol,0))}
+.cab h2{position:relative;padding-bottom:22px}
+.cab h2::after{content:"";position:absolute;left:50%;bottom:0;width:10px;height:10px;margin-left:-5px;background:var(--azul);-webkit-mask:var(--az) center/contain no-repeat;mask:var(--az) center/contain no-repeat}
+.escuro .cab h2::after{background:var(--azul-c)}
+.ds-txt h3,.cores-txt h2,.art-txt h2{margin-top:0}
+.frase{font-size:clamp(17px,1.5vw,21px)}
