@@ -284,3 +284,11 @@ h1,h2,h3{margin:0;font-weight:400}
 .ds-foto img,.cores-img img{height:auto}
 .quadro::before{transform:translate(24px,24px);background-size:56px 56px}
 @media (max-width:640px){.quadro::before{transform:translate(12px,12px);background-size:40px 40px}}
+/* v3: sem azulejos; suporte em azul liso e nome inteiro abaixo do quadro */
+:root{--az:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 0l5 5-5 5-5-5z'/%3E%3C/svg%3E")}
+.quadro::before,.ds-foto::before,.art-foto::before{background:var(--azul)!important;outline:0}
+.quadro::before{transform:translate(18px,18px)}
+.nome{margin-top:calc(18px + var(--fs,160px)*.12);align-items:center}
+.grande{text-shadow:none;line-height:.86}
+.pre{margin:0 0 .12em}
+@media (max-width:640px){.quadro::before{transform:translate(10px,10px)}}

@@ -6,12 +6,12 @@
   var grande = d.getElementById('grande'), quadro = d.getElementById('quadro');
   function ajustar() {
     var vw = html.clientWidth || innerWidth, vh = innerHeight, g = Math.max(16, Math.min(vw * .04, 56));
-    var base = vh < 560 ? 70 : vw < 640 ? 200 : 250;
+    var base = vh < 560 ? 70 : vw < 640 ? 230 : 300;
     var qh = Math.max(220, Math.min(vh - 84 - base - 60, (vw - 2 * g - 30) * 1.25, 760));
     hero.style.setProperty('--qh', qh + 'px');
     grande.style.setProperty('--fs', '100px');
     var r = grande.scrollWidth / 100;
-    var alvo = Math.min(vw - 2 * g - 10, qh * 1.05);
+    var alvo = Math.min(vw - 2 * g - 10, qh * .95);
     var fs = Math.max(48, alvo / r).toFixed(1) + 'px';
     hero.style.setProperty('--fs', fs); grande.style.setProperty('--fs', fs);
   }
