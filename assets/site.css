@@ -307,3 +307,27 @@ h1,h2,h3{margin:0;font-weight:400}
 .escuro .cab h2::after{background:var(--azul-c)}
 .ds-txt h3,.cores-txt h2,.art-txt h2{margin-top:0}
 .frase{font-size:clamp(17px,1.5vw,21px)}
+/* v7: tatuagens dele apagadas ao fundo, só como textura */
+.hero::before,.hero::after,.deco::before,.deco::after{content:"";position:absolute;pointer-events:none;background:center/contain no-repeat;z-index:0}
+.hero>*{position:relative;z-index:1}.hero>.eti{position:absolute}
+.hero::before{background-image:url(img/fundo-besouro.webp);width:min(44vw,640px);aspect-ratio:1100/847;left:-7vw;top:12%;opacity:.075;transform:rotate(-9deg)}
+.hero::after{background-image:url(img/fundo-coruja.webp);width:min(40vw,580px);aspect-ratio:1100/917;right:-6vw;bottom:2%;opacity:.07;transform:rotate(7deg) scaleX(-1)}
+.deco{overflow:hidden}
+.deco>*{position:relative;z-index:1}
+.artista.deco::after{background-image:url(img/fundo-besouro.webp);width:min(38vw,520px);aspect-ratio:1100/847;right:-8vw;bottom:-4%;opacity:.07;transform:rotate(12deg)}
+.processo.deco::before{background-image:url(img/fundo-coruja.webp);width:min(30vw,400px);aspect-ratio:1100/917;left:-6vw;top:8%;opacity:.07;transform:rotate(-8deg)}
+.processo.deco::after{background-image:url(img/fundo-besouro.webp);width:min(28vw,380px);aspect-ratio:1100/847;right:-6vw;bottom:6%;opacity:.07;transform:rotate(10deg) scaleX(-1)}
+.estudio.deco::after{background-image:url(img/fundo-coruja.webp);width:min(32vw,440px);aspect-ratio:1100/917;right:-7vw;top:4%;opacity:.065;transform:rotate(9deg)}
+.marcar.deco::before{background-image:url(img/fundo-coruja-claro.webp);width:min(40vw,560px);aspect-ratio:1100/917;left:-8vw;top:10%;opacity:.06;transform:rotate(-8deg)}
+.marcar.deco::after{background-image:url(img/fundo-besouro-claro.webp);width:min(36vw,500px);aspect-ratio:1100/847;right:-8vw;bottom:8%;opacity:.06;transform:rotate(9deg)}
+.portfolio.deco::before{background-image:url(img/fundo-besouro-claro.webp);width:min(34vw,480px);aspect-ratio:1100/847;right:-6vw;top:3%;opacity:.05;transform:rotate(8deg)}
+@media (max-width:900px){
+  .hero::before{width:78vw;left:-30vw;top:9%;opacity:.06}
+  .hero::after{width:72vw;right:-28vw;bottom:24%;opacity:.055}
+  .deco::before,.deco::after{opacity:.05!important}
+  .artista.deco::after{width:70vw;right:-26vw}
+  .processo.deco::before{width:58vw;left:-22vw;top:4%}.processo.deco::after{width:56vw;right:-22vw;bottom:2%}
+  .estudio.deco::after{width:62vw;right:-24vw}
+  .marcar.deco::before{width:70vw;left:-28vw;top:3%}.marcar.deco::after{width:66vw;right:-26vw;bottom:2%}
+  .portfolio.deco::before{width:66vw;right:-24vw}
+}
