@@ -37,7 +37,7 @@
   PH.forEach(function (p) { var im = new Image(); im.src = 'assets/img/p/' + p.c + '.webp'; });
   function rotulo(p) {
     peca.style.opacity = 0; selo.classList.remove('on');
-    setTimeout(function () { peca.children[0].textContent = p.r[0]; peca.children[1].textContent = p.r[1]; selo.textContent = p.s; peca.style.opacity = 1; selo.classList.add('on'); }, 220);
+    setTimeout(function () { peca.children[0].textContent = p.r[1]; selo.textContent = p.s; peca.style.opacity = 1; selo.classList.add('on'); }, 220);
   }
   function abrir(i) {
     var p = PH[i], src = 'assets/img/p/' + p.c + '.webp';
@@ -83,11 +83,6 @@
   cor.forEach(function (p) { if (L.indexOf(p) < 0) L.push(p); });
   var grade = d.getElementById('grade'), mais = d.getElementById('mais'), filtro = 'todos';
   var passoN = matchMedia('(max-width:640px)').matches ? 8 : 12, limite = passoN;
-  d.getElementById('nPecas').textContent = L.length;
-  d.querySelectorAll('.filtros button').forEach(function (b) {
-    var n = b.dataset.f === 'todos' ? L.length : L.filter(function (p) { return p.t === b.dataset.f; }).length;
-    var c = d.createElement('sup'); c.textContent = n; b.appendChild(c);
-  });
   L.forEach(function (p, i) {
     var f = d.createElement('figure'); f.className = 'item'; f.tabIndex = 0; f.dataset.i = i;
     f.setAttribute('role', 'button'); f.setAttribute('aria-label', 'Ampliar: ' + p.l);
