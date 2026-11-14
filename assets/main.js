@@ -26,8 +26,8 @@
      A peça aparece no escuro e um foco abre do ponto de luz até a revelar inteira (~1,3 s).
      Só máscara e opacidade: leve também no telemóvel. */
   var PH = [
-    { c: 'DaImiDPDEna', l: [.5, .32], r: ['Nº 1', 'Escaravelho · peito'], s: 'Preto e cinza' },
     { c: 'DbBu3LLjGZB', l: [.62, .3], r: ['Nº 2', 'Lata de sardinhas · perna'], s: 'A cores' },
+    { c: 'DaImiDPDEna', l: [.5, .32], r: ['Nº 1', 'Escaravelho · peito'], s: 'Preto e cinza' },
     { c: 'DbqGOAbu8Ct', l: [.45, .3], r: ['Nº 3', 'Águia e caveira · braço'], s: 'Num só dia' },
     { c: 'Byi1tsClPnO', l: [.5, .4], r: ['Nº 4', 'Coruja · peito'], s: 'A cores' }
   ];
