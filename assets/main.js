@@ -4,11 +4,14 @@
 
   /* ---------- medidas do hero: quadro e nome cabem sempre no ecrã ---------- */
   var grande = d.getElementById('grande'), quadro = d.getElementById('quadro');
+  /* no telemóvel a barra do navegador muda a altura ao rolar: medir uma vez e só refazer se a largura mudar */
+  var toque = matchMedia('(hover: none)').matches, H0 = 0;
+  function altura() { if (!toque) return innerHeight; if (!H0) H0 = innerHeight; return H0; }
   function ajustar() {
-    var vw = html.clientWidth || innerWidth, vh = innerHeight, g = Math.max(16, Math.min(vw * .04, 56));
+    var vw = html.clientWidth || innerWidth, vh = altura(), g = Math.max(16, Math.min(vw * .04, 56));
     var base = vh < 560 ? 70 : vw < 640 ? 230 : 300;
     var qh = Math.max(220, Math.min(vh - 84 - base - 60, (vw - 2 * g - 30) * 1.25, 760));
-    hero.style.setProperty('--qh', qh + 'px');
+    hero.style.setProperty('--qh', qh + 'px'); hero.style.setProperty('--hh', vh + 'px');
     grande.style.setProperty('--fs', '100px');
     var r = grande.scrollWidth / 100;
     var alvo = Math.min(vw - 2 * g - 10, qh * .95);
@@ -16,7 +19,7 @@
     hero.style.setProperty('--fs', fs); grande.style.setProperty('--fs', fs);
   }
   ajustar();
-  addEventListener('resize', ajustar);
+  var lw = html.clientWidth; addEventListener('resize', function () { var w = html.clientWidth; if (w === lw && toque) return; lw = w; H0 = 0; ajustar(); });
   if (d.fonts && d.fonts.ready) d.fonts.ready.then(ajustar);
 
   /* ---------- hero: a luz de estúdio acende sobre cada peça ----------

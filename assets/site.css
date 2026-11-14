@@ -294,3 +294,4 @@ h1,h2,h3{margin:0;font-weight:400}
 @media (max-width:640px){.quadro::before{transform:translate(10px,10px)}}
 .grande{line-height:1;padding:0 .04em .08em;clip-path:inset(-20% 100% -40% -10%)}
 .pronto .grande{clip-path:inset(-20% -10% -40% -10%)}
+@media (hover:none){.hero{min-height:var(--hh,100svh)}}
