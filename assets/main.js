@@ -86,7 +86,7 @@
   L.forEach(function (p, i) {
     var f = d.createElement('figure'); f.className = 'item'; f.tabIndex = 0; f.dataset.i = i;
     f.setAttribute('role', 'button'); f.setAttribute('aria-label', 'Ampliar: ' + p.l);
-    f.innerHTML = '<div class="fr"><img src="assets/img/p/' + p.c + '.webp" alt="' + p.l + ', tatuagem de Will Salgado" width="800" height="1000"></div><figcaption><span>' + p.l + '</span><i>' + (p.t === 'cor' ? 'Cor' : 'P&amp;C') + '</i></figcaption>';
+    f.innerHTML = '<div class="fr"><img src="assets/img/p/' + p.c + '.webp" alt="' + p.l + ', tatuagem de Will Salgado" width="800" height="1000"></div>';
     grade.appendChild(f);
   });
   var itens = [].slice.call(grade.children);
