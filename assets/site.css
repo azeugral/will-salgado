@@ -314,7 +314,7 @@ h1,h2,h3{margin:0;font-weight:400}
 .hero::after{background-image:url(img/fundo-coruja.webp);width:min(40vw,580px);aspect-ratio:1100/917;right:-6vw;bottom:2%;opacity:.07;transform:rotate(7deg) scaleX(-1)}
 .deco{overflow:hidden}
 .deco>*{position:relative;z-index:1}
-.artista.deco::after{background-image:url(img/fundo-besouro.webp);width:min(38vw,520px);aspect-ratio:1100/847;right:-8vw;bottom:-4%;opacity:.07;transform:rotate(12deg)}
+.artista.deco::after{background-image:url(img/fundo-besouro.webp);width:min(30vw,440px);aspect-ratio:1100/847;right:3vw;bottom:6%;opacity:.07;transform:rotate(8deg)}
 .processo.deco::before{background-image:url(img/fundo-coruja.webp);width:min(30vw,400px);aspect-ratio:1100/917;left:-6vw;top:8%;opacity:.07;transform:rotate(-8deg)}
 .processo.deco::after{background-image:url(img/fundo-besouro.webp);width:min(28vw,380px);aspect-ratio:1100/847;right:-6vw;bottom:6%;opacity:.07;transform:rotate(10deg) scaleX(-1)}
 .estudio.deco::after{background-image:url(img/fundo-coruja.webp);width:min(32vw,440px);aspect-ratio:1100/917;right:-7vw;top:4%;opacity:.065;transform:rotate(9deg)}
